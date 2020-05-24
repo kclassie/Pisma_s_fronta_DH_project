@@ -19,3 +19,6 @@ This repository describes my work on the digital humanities research about The G
 
 ## Корпус xml-файлов с текстами писем ## 
 доступен в google-папке: https://drive.google.com/drive/folders/1FMNTBZF4GepY10VZyXySaWLralnOlqfY
+
+Таблицы с частотностью слов и TF-IDF находятся здесь
+https://drive.google.com/drive/folders/1rV-7-3O8IX-IvG0R53yvtfrJpBAQqXJo
