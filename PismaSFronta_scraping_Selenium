@@ -1,0 +1,73 @@
+#импортируем все необходимые модули
+
+from selenium import webdriver
+import os
+import time
+
+ЭТАП 1
+Код ниже скачивает все ссылки на страницы с письмами, фото и другими материалами на сайте https://www.pismasfronta.com/chitat-knigu-1. Всего 99 страниц, по 15 ссылок на каждой, кроме последней, где только 2.
+
+Решаемые проблемы
+
+Первая страница имеет уникальный url "https://www.pismasfronta.com/chitat-knigu-1", все последующие - с пагинацией "https://www.pismasfronta.com/chitat-knigu-1/page/[1-98]". Поэтому используются Два цикла - для первой страницы и для последующих.
+
+Расположение элемента с href таже представлено в двух вариантах. В зависимости от того, включает он только текст или текст + изображение применяется разный xpath: '//*[@id="comp-izy6gs0c_MediaLeftPage_TextPost__0_0_{i}0def_42"]/a' и '//*[@id="comp-izy6gs0c_MediaLeftPage_PhotoPost__0_0_{i}0def_27"]/a'
+
+Необходимые элементы подгружаются очень медлено, поэтому на каждой итерации применяется time.sleep.
+
+Однако код скачал 1457. Чтобы понять, есть ли ошибки, или на некоторых страницах < 15 ссылок - проводится обработка ошибок и они сохраняются в отдельный файл 'pisma_errors.txt'
+
+Ссылки на письма сохраняются в файл 'pisma_urs.txt'
+
+
+urls = []
+exceptions = []
+kniga ="https://www.pismasfronta.com/chitat-knigu-1/page/"
+try:
+    driver = webdriver.Chrome(executable_path='C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+    for i in range(1,2):
+        url = kniga+str(i)
+        driver.get(url)
+        time.sleep(60)
+        for i in range(0,15):
+            try:
+                xpath = f'//*[@id="comp-izy6gs0c_MediaLeftPage_TextPost__0_0_{i}_0_def_42"]/a'
+                res = driver.find_element_by_xpath(xpath)
+            except Exception:
+                exception = "Error: " + url + " : " + xpath
+                exceptions.append(exception)
+                try:
+                    xpath = f'//*[@id="comp-izy6gs0c_MediaLeftPage_PhotoPost__0_0_{i}_0_def_27"]/a'
+                    res = driver.find_element_by_xpath(xpath)
+                except Exception:
+                    exception = "Error2: " + url + " : " + xpath
+                    exceptions.append(exception)
+                    continue
+            try:
+                url = res.get_attribute('href')
+            except Exception:
+                    print ("Error3:" + url + " : " + xpath)
+                    exceptions.append(exception)
+                    continue
+            urls.append(url)
+            time.sleep(3)
+
+    driver.get("https://www.pismasfronta.com/chitat-knigu-1")
+    time.sleep(60)
+    for i in range(0,15):
+        res = driver.find_element_by_xpath(f'//*[@id="comp-izy6gs0c_MediaLeftPage_TextPost__0_0_{i}_0_def_42"]/a')
+        url = res.get_attribute('href')
+        urls.append(url)
+        time.sleep(3)
+finally:
+    driver.quit()
+print(len(urls))
+print(len(exceptions))
+
+with open('pisma_errors.txt', 'a', encoding='utf-8') as file:
+    for err in exceptions:
+        file.write("%s\n" % err)
+
+with open('pisma_urs.txt', 'a', encoding='utf-8') as file:
+    for url in urls:
+        file.write("%s\n" % url)
