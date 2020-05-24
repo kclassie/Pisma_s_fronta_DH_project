@@ -15,7 +15,7 @@ This repository describes my work on the digital humanities research about The G
 4)	PismaSFronta_word_analysis.ipynb – программный код для статистического анализа текстов корпуса.
 5)	PismaSFronta_W2V.ipynb – программный код для обучения модели Word2vec.
 6)	PismaSFronta_clastering.ipynb – программный код для кластеризации текстов корпуса с применением алгорита k-mean.
-7)	letters_model.model – файл с моделью Word2vec, обученной на текстах корпуса фронтовых писем.
+7)	letters_model.model – файл с моделью Word2vec, обученной на текстах корпуса фронтовых писем: https://drive.google.com/open?id=1LEb-Qirzv7HqsOpsO3UkUfcjYoCQzXxr
 
 ## Корпус xml-файлов с текстами писем ## 
 доступен в google-папке: https://drive.google.com/drive/folders/1FMNTBZF4GepY10VZyXySaWLralnOlqfY
