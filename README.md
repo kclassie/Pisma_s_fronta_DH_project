@@ -4,6 +4,16 @@
 
 This repository describes my work on the digital humanities research about The Great Patriotic War
 
+| Стек технологий        | |
+| ------------- |:-------------:|
+| Selenium WebDriver | Скрейпинг сайта с текстами писем                | 
+| BeautifulSoup      | Синтаксический разбор HTML/XML                  |
+| NLTK               | Символьная и статистическая обработка текста    |
+| Pymorphy2          | Морфологический анализ текстов на русском языке |
+| Gensim             | Тематическое моделирование                      |
+| Scikit-learn       | Решение задач классического машинного обучения  |
+
+
 # Содержание:
 
 1)	PismaSFronta_scraping_Selenium.ipynb – программный код для скрейпинга сайта pismasfronta.com.
