@@ -1,8 +1,10 @@
 # Pisma_s_fronta_DH_project
 
-В репозитории содержатся материалы цифрового гуманитарного исследования "Анализ корпуса писем времен Великой Отечественной войны с использованием методов машинного обучения.
+В репозитории содержатся материалы цифрового гуманитарного исследования "Анализ корпуса писем времен Великой Отечественной войны с использованием методов машинного обучения".
 
-This repository describes my work on the digital humanities research about The Great Patriotic War
+This repository describes my work on the digital humanities research about The Great Patriotic War.
+
+![](https://github.com/kclassie/Pisma_s_fronta_DH_project/blob/master/img/W2V_words_clusters_full.png)
 
 | Стек технологий        | |
 | ------------- |:-------------:|
@@ -13,6 +15,9 @@ This repository describes my work on the digital humanities research about The G
 | Gensim             | Тематическое моделирование                      |
 | Scikit-learn       | Решение задач классического машинного обучения  |
 
+![](https://github.com/kclassie/Pisma_s_fronta_DH_project/blob/master/img/word_cloud.png)
+
+![](https://github.com/kclassie/Pisma_s_fronta_DH_project/blob/master/img/W2V_words_clusters.png)
 
 # Содержание:
 
@@ -24,8 +29,12 @@ This repository describes my work on the digital humanities research about The G
 6)	PismaSFronta_clastering.ipynb – программный код для кластеризации текстов корпуса с применением алгорита k-mean.
 7)	letters_model.model – файл с моделью Word2vec, обученной на текстах корпуса фронтовых писем: https://drive.google.com/open?id=1LEb-Qirzv7HqsOpsO3UkUfcjYoCQzXxr
 
+![](https://github.com/kclassie/Pisma_s_fronta_DH_project/blob/master/img/W2W_k-means.png)
+
 ## Корпус xml-файлов с текстами писем ## 
 доступен в google-папке: https://drive.google.com/drive/folders/1FMNTBZF4GepY10VZyXySaWLralnOlqfY
+
+![](https://github.com/kclassie/Pisma_s_fronta_DH_project/blob/master/img/W2V_semantic_network.png)
 
 Таблицы с частотностью слов и TF-IDF находятся здесь
 https://drive.google.com/drive/folders/1rV-7-3O8IX-IvG0R53yvtfrJpBAQqXJo
