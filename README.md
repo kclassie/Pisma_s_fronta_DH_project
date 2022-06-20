@@ -1,4 +1,7 @@
 # Pisma_s_fronta_DH_project
+
+В репозитории содержатся материалы цифрового гуманитарного исследования "Анализ корпуса писем времен Великой Отечественной войны с использованием методов машинного обучения.
+
 This repository describes my work on the digital humanities research about The Great Patriotic War
 
 # Содержание:
